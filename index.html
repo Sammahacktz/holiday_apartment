@@ -8,34 +8,62 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav hidden class="navbar navbar-expand-lg navbar-light nav-background">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="#">FeWo Seiffen</a>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-light nav-background">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">FeWo Seiffen</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
+      </div>
     </nav>
-    <div class="home text-center ">
-        <h2 class="top-50 start-50 translate-middle">Fewo Seiffen LippMann</h2>
-        <div class="w-100 image-blur">
-            <img src="img/seiffen.jpg" class="img-fluid w-100">
-        </div>
-    </div>
+    <section class="parallax">
+      <img src="img/parallax/background.png" id="background">
+      <img src="img/parallax/background2.png" id="background2">
+      <div class="header" id="heading">
+        <p>Urlaub in</p>
+        <p>Seiffen</p>
+      </div>
+      <img src="img/parallax/house.png" id="house">
+      <img src="img/parallax/front.png" id="front">
+    </section>
+    
+    <div class="sec">
+      <h2>SECRET SANTA</h2>
+      <p> 
+          Dieses Jahr kommen wir am 23. Dezember endlich wieder zusammen.  
+           Mit dieser Webseite haben wir uns dieses mal etwas Besonderes überlegt. Wir wichteln!
+      </p>
+      <h3>Wie funktioniert`s ?</h3>
+      <p>
+          Jeder bekommt einen Partner zugewiesen. 
+          Dazu musst du einfach nur nachschauen ob der Weihnachtsmann schon ein Geschenk hat fallen lassen. Wenn Ja dann schnapp es dir und schreib deinen Namen drauf! 
+          Einfach deinen Vor- und Nachnamen eintragen und Enter drücken und schon weißt du wen du beschenken darfst. Bei Fragen oder Problemen kannst du dich gerne an Charlie wenden.
+      </p>
+      <p>
+          Oben rechts hast du verschiedene Möglichkeiten das Schneegestöber zu beeinflussen und auf der linken Seite siehst du wieviele von uns schon zum Wichtel geworden sind. Viel Spaß!
+      </p>
+      
+      <div class ="designed_by">
+          <p class = "logo">Designed by </p>
+          <img src="/static/images/logo_freepik.png" height="100px" width="100px"></img>
+          <a type="button" class = "logo button" href = "{% url 'credits' %}" >Credits</a>        
+
+      </div>
+  </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>

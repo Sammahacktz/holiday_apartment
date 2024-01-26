@@ -1,35 +1,75 @@
-@font-face {
-    font-family: 'homeFont';
-    src: url('/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('woff2');
-  }
-.nav-background{
-    background-color: rgb(255, 255, 255);
-    z-index: 4;
-    position: fixed;
+body{
+    background-color: #C2D5B9 !important;
 }
-html{
-    background-color: rgb(34, 34, 34);
+/*_______________________*/
+/*       Parallax        */
+/*_______________________*/
+section{
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
-
-.image-blur2{
-    animation: blur 10s linear infinite;
-}
-
-@keyframes blur {
-    0%{
-        filter: blur(0px);
-    }
-    50%{
-        filter: blur(5px);
-    }
-}
-
-.home h2{
+section::before{
+    content: '';
     position: absolute;
-    z-index: 3;
-    font-family:'homeFont';
-    color: white;
-    opacity: 0.8;
-    font-size: 5rem;
-    text-shadow: 2px 1px 4px rgba(255, 255, 255, 0.9);;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 2;
+    background: linear-gradient(to top, #0C3233, transparent);
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+
+/*_______________________*/
+/*       NAVBAR          */
+/*_______________________*/
+
+.header{
+    margin-top: -150px;
+    position: absolute;
+    color: #95a38f;
+    font-weight: 900;
+    font-size: 4rem;
+    text-shadow:  20px 10px 100px 10px rgba(0, 0, 0, 0.5);
+}
+.nav-background{
+    margin-top: 10px;
+    min-width: 95vw;
+    margin-left: 2.5vw;
+    position: fixed !important;
+    background-color: #C2D5B9;
+    box-shadow: 20px 10px 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 1px; /* Adjust as needed */
+    background-color: #0D1A26;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0D1A26; /* Hide the scrollbar thumb */
+}
+
+/*_______________________*/
+/*       GROUND          */
+/*_______________________*/
+
+.sec{
+    background-color: #0C3233;
+    color:aliceblue;
 }
