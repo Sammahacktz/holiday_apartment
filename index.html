@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Hello, world!</title>
+    <title>Ferienwohnung Lippmann</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light nav-background">
@@ -17,10 +17,22 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active"  href="#history">Seiffen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#erz">Erzgebirge</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#erz">Aktivitäten</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#rooms">Zimmer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#costs">Preise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#request">Buchungsanfrage</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -40,30 +52,51 @@
       <img src="img/parallax/house.png" id="house">
       <img src="img/parallax/front.png" id="front">
     </section>
-    
     <div class="sec">
-      <h2>SECRET SANTA</h2>
-      <p> 
-          Dieses Jahr kommen wir am 23. Dezember endlich wieder zusammen.  
-           Mit dieser Webseite haben wir uns dieses mal etwas Besonderes überlegt. Wir wichteln!
-      </p>
-      <h3>Wie funktioniert`s ?</h3>
-      <p>
-          Jeder bekommt einen Partner zugewiesen. 
-          Dazu musst du einfach nur nachschauen ob der Weihnachtsmann schon ein Geschenk hat fallen lassen. Wenn Ja dann schnapp es dir und schreib deinen Namen drauf! 
-          Einfach deinen Vor- und Nachnamen eintragen und Enter drücken und schon weißt du wen du beschenken darfst. Bei Fragen oder Problemen kannst du dich gerne an Charlie wenden.
-      </p>
-      <p>
-          Oben rechts hast du verschiedene Möglichkeiten das Schneegestöber zu beeinflussen und auf der linken Seite siehst du wieviele von uns schon zum Wichtel geworden sind. Viel Spaß!
-      </p>
-      
-      <div class ="designed_by">
-          <p class = "logo">Designed by </p>
-          <img src="/static/images/logo_freepik.png" height="100px" width="100px"></img>
-          <a type="button" class = "logo button" href = "{% url 'credits' %}" >Credits</a>        
-
+      <div class="container fade-in" id="history">
+          <div class="row">
+            <div class="col-3">
+              <img src="img/char/">
+            </div>
+            <div class="col-9">
+            <h2>Geschichte:</h2>
+              <p> 
+                Die Geschichte Seiffens
+                Die erste urkundliche Erwähnung Seiffens stammt aus dem Jahr 1324. 
+                Damals wurde das Gebiet von böhmischer Seite aus besiedelt. 
+                Zu dieser Zeit bestimmte der Zinnbergbau das Leben in und um Seiffen.
+                Der Name Seiffen entstand aus dem Wort Cynsifen.
+                
+                Als weiterer Erwerb für die Bevölkerung diente die Glasmacherei, 
+                welche in den folgenden Jahrhunderten ausgeprägt betrieben wurde. 
+                Wanderfreunde können auf dem Glasmachersteig die Geschichte belesen und alte Zeitzeugen bestaunen.
+                
+                Der große Waldbestand lieferte damals das Brennholz für die Hüttenöfen. 
+                Der Bergbau wurde ebenfalls vorangetrieben - viele Zeitzeugen zeigen dies noch heute 
+                (Binge, Geyerin, verschiedene Gruben und Stollen). Im 18. Jh. 
+                erlosch der Bergbau auf Grund von Konkurrenz aus dem Ausland, niedrigen Erträgen und sinkenden Preisen. 
+                Zu dieser Zeit begannen aus Not handwerklich begabte Bergleute mit der Herstellung von Gebrauchsgegenständen aus Holz. 
+                Später folgten Holzspielzeug, Engel & Bergmann, Leuchter, Schwibbögen, Räuchermänner und vieles mehr.
+                
+                Die Vielfalt ist über die Jahre enorm gestiegen. 
+                Heute können Sie die Erzgebirgische Volkunst in zahlreichen Schauwerkstätten und Läden besichtigen und erwerben. 
+                Außerdem bieten das Spielzeug- und Freilichtmuseum einen umfangreichen Überblick in die Geschichte von Seiffen und des Erzgebirges. 
+                Immer neue Ausstellungen und Veranstaltungen im Spielzeugmuseum bieten ein abwechslungsreiches Programm an.
+              </p>
+            </div>
+          </div>
       </div>
-  </div>
+      <div id="erz">
+        <h2>Erzgebirge:</h2>
+        <p> 
+          Besuchen Sie die geschichtsträchtigen und traditionellen Orte und Sehenswürdigkeiten des Erzgebirges und Sachsens. 
+          Auf Wanderungen und Ausflügen erleben Sie eine markante Natur sowie typische Dörfer und Städte. 
+          Auch Sportler und Sportinteressierte können im Erzgebirge vielfältige Veranstaltungen besuchen 
+          (z. B. Mountainbike, Wintersport, Gleit- und Segelflugsport, Motorsport u. v.m.).
+
+        </p>
+      </div>
+    </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
