@@ -49,6 +49,7 @@ body{
     color: #8b9785;
     font-weight: 900;
     font-size: 4rem;
+    text-shadow: 5px 0px rgba(0, 0, 0, 0.7);
 }
 .nav-background{
     margin-top: 10px;
@@ -86,4 +87,26 @@ body{
     border-radius: 10px;
     box-shadow: 5px 5px 10px 10px rgb(2, 2, 2);
     color: #0C3233;
+}
+
+
+/*_______________________*/
+/*       CHAR            */
+/*_______________________*/
+.char{
+    position: fixed;
+    bottom: -1rem;
+    right: -1rem;
+}
+.char img{
+    position: absolute;
+    height: 40vh;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-5deg);
+}
+
+.char-blend{
+    z-index: 100;
+    background-color: #0D1A26;
 }
