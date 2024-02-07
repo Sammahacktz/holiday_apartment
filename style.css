@@ -26,17 +26,30 @@ body{
 */
 .parallax img{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -5%;
+    left: -3%;
+    width: 106%;
+    height: 105%;
     object-fit:cover;
+    transition: transform ease-out;
 }
 
 .sec{
     padding-top: 1rem;
-    background-color: #0E3135;
+    background-color: #193F40;
     color: #adbea4;
+}
+.parallax img#birds{
+    animation: fly 60s linear infinite;
+}
+
+@keyframes fly {
+    0%{
+        left: -50vw;
+    }
+    100%{
+        left: 60vw;
+    }
 }
 
 /*_______________________*/
@@ -65,11 +78,11 @@ body{
 
 ::-webkit-scrollbar {
     width: 1px; /* Adjust as needed */
-    background-color: #0D1A26;
+    background-color: #193F40;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #0D1A26; /* Hide the scrollbar thumb */
+    background-color: #193F40; /* Hide the scrollbar thumb */
 }
 
 /*_______________________*/
@@ -77,7 +90,7 @@ body{
 /*_______________________*/
 
 .text{
-    background-color: #0C3233;
+    background-color: #193F40;
     color:aliceblue;
 }
 
@@ -86,7 +99,7 @@ body{
     padding: 10px 20px 20px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 10px rgb(2, 2, 2);
-    color: #0C3233;
+    color: #193F40;
 }
 
 
