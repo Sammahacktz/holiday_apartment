@@ -2,6 +2,7 @@
 var parallax = [
     document.getElementById("sky"),
     document.getElementById("clouds"),
+    document.getElementById("birds"),
     document.getElementById("hill_house"),
     document.getElementById("hill_small"),
     document.getElementById("hill_trees"),
