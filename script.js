@@ -25,18 +25,12 @@ window.addEventListener("DOMContentLoaded", () => {
         parallax.forEach((layer, index)=>{
             layer.style.top = value * (start_sensitivity - (drop_sensitivity * index)) + "px"; //adjust
         })
-        
 
         cards.forEach((card)=>{
-            console.log(value + " test " + card.getBoundingClientRect().top)
-            if(value >= card.getBoundingClientRect().top)
-            setTimeout(()=>{
-                card.classList.add("card-slide")
-            },0)
+            if(card.getBoundingClientRect().top -window.innerHeight <= 0)
+            setTimeout(()=>card.classList.add("card-slide"), 100)
         })
-
     })
-    
     window.addEventListener("mousemove", (e)=>{
         const offsetX = (e.clientX - window.innerWidth / 2) / 15;
         const offsetY = (e.clientY - window.innerHeight / 1.4) / 15;
