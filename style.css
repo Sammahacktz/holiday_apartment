@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'mainFont';
+    src: url('fonts/VarelaRound-Regular.ttf') format('truetype'); /* Legacy Browsers */
+}
 body{
     background-color: #C2D5B9 !important;
 }
@@ -34,23 +38,6 @@ body{
     animation: fly 60s linear infinite;
 }
 
-@keyframes fly {
-    0%{
-        left: -50vw;
-    }
-    100%{
-        left: 60vw;
-    }
-}
-
-@keyframes fade-in {
-    0%{
-        left: -50vw;
-    }
-    100%{
-        left: 60vw;
-    }
-}
 
 /*_______________________*/
 /*       NAVBAR          */
@@ -74,6 +61,7 @@ body{
     box-shadow: 20px 10px 10px 10px rgba(0, 0, 0, 0.3);
     z-index: 5;
     border-radius: 10px;
+    font-family: mainFont;
 }
 
 ::-webkit-scrollbar {
@@ -86,21 +74,31 @@ body{
 }
 
 /*_______________________*/
-/*       GROUND          */
+/*       CARDS           */
 /*_______________________*/
 
 .text{
     background-color: #193F40;
     color:aliceblue;
+    font-family: mainFont;
 }
 
 .texture-card{
     background-color:#C2D5B9 !important;
     padding: 10px 20px 20px;
     border-radius: 15px !important;
-    box-shadow: 10px 10px 10px 5px rgba(2, 2, 2, 0.6);
     color: #193F40;
     margin-top: 2rem;
+    left: 100vw;
+    font-family: mainFont;
+}
+/*
+.texture-card:hover{
+    animation: heavy-mouse 0.4s forwards ease-in-out ;
+}
+*/
+.card-slide{
+    animation: slide-in 2s forwards ease-in-out;
 }
 
 
@@ -130,4 +128,46 @@ body{
     max-width: 500px;
     max-height: 500px;
     border-radius: 15px;
+}
+
+
+/*_______________________*/
+/*       ANIMANTIONS     */
+/*_______________________*/
+
+
+@keyframes fly {
+    0%{
+        left: -50vw;
+    }
+    100%{
+        left: 60vw;
+    }
+}
+
+@keyframes slide-in {
+    0%{
+        overflow-x: hidden;
+        box-shadow: none;
+    }
+    70%{
+        overflow-x: hidden;
+        left: 1;
+        box-shadow: 1px 1px 1px 2px rgba(2, 2, 2, 1);
+    }
+    100%{
+        overflow-x: visible;
+        left: 0;
+        box-shadow: 15px 15px 10px 10px rgba(2, 2, 2, 0.6);
+    }
+}
+
+@keyframes heavy-mouse {
+ 
+    0%{
+        box-shadow: 15px 15px 10px 10px rgba(2, 2, 2, 0.6);
+    }
+    100%{
+        box-shadow: 5px 5px 3px 3px rgba(2, 2, 2, 1);
+    }
 }
