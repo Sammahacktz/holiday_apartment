@@ -91,6 +91,7 @@ body{
     margin-top: 2rem;
     left: 100vw;
     font-family: mainFont;
+    font-size: larger;
 }
 /*
 .texture-card:hover{
@@ -100,6 +101,7 @@ body{
 .card-slide{
     animation: slide-in 2s forwards ease-in-out;
 }
+
 
 
 /*_______________________*/
