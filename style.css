@@ -93,6 +93,9 @@ body{
     font-family: mainFont;
     font-size: larger;
 }
+.text-content{
+    display: none;
+}
 /*
 .texture-card:hover{
     animation: heavy-mouse 0.4s forwards ease-in-out ;

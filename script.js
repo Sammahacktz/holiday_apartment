@@ -53,24 +53,22 @@ window.addEventListener("DOMContentLoaded", () => {
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
       
         // Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
+        /*
         const r = Math.round((25 - 194) * scrollPercentage + 194);
         const g = Math.round((63 - 213) * scrollPercentage + 213);
         const b = Math.round((64 - 185) * scrollPercentage + 185);
         navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-
-        const tr = Math.round((194 - 25) * scrollPercentage + 25);
-        const tg = Math.round((213 - 63) * scrollPercentage + 63);
-        const tb = Math.round((185 - 64) * scrollPercentage + 64);
-        navBar.style.color= `rgb(${tr}, ${tg}, ${tb}) !important`
-
-
+        */
     })
 
     document.querySelectorAll(".nav-link").forEach((navButton) => {
         navButton.addEventListener("click", (e)=>{
             const visibleTextModule = Array.from(textModules).filter((textModule) => {
-                return `#${textModule.id}`===navButton.id
+                textModule.style.display = "none";
+
+                return textModule.id===navButton.id
             })[0];
+            console.log(visibleTextModule)
             visibleTextModule.style.display = "block";
         })
     })
