@@ -102,7 +102,17 @@ footer{
     z-index: 5;
     /*border:2px solid #74806f;*/
 }
+.carousel-item {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
 
+/* Ensure the image doesn't exceed the carousel item's dimensions */
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+}
 /*
 .texture-card:hover{
     animation: heavy-mouse 0.4s forwards ease-in-out ;
@@ -149,11 +159,12 @@ input, textarea{
 }
 
 
-
 .tab-nav button{
     color:#fff!important;
     border: 2px solid #263c32 !important;
     background-color: #345d4c !important;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
 
 }
 .tab-nav button.active{
@@ -181,6 +192,23 @@ input, textarea{
     background-color: #163536;
     z-index: 4;
     top:1rem;
+}
+
+.svg-container {
+    position: absolute;
+    width: 100vw;
+    z-index: 5;
+}
+
+svg {
+    position: absolute;
+    top:-40vh;
+    left:-14vw;
+}
+path{
+    stroke: #73d7ae; /* Change the stroke color as needed */
+    fill: none;
+    stroke-width: 5;
 }
 
 /*_______________________*/

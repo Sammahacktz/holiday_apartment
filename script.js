@@ -36,13 +36,12 @@ window.addEventListener("DOMContentLoaded", () => {
         window.alert("Firefox is not supported")
     }
 
-    /*
-    const path = document.querySelectorAll('.svg-container svg path');
-    const pathLength = path.getTotalLength();
-    var oldPercentage = 0;
+    
+    const path = document.getElementById("Pfad");
+    const pathLength = path.getTotalLength;
     path.style.strokeDasharray = pathLength + ' ' + pathLength;
     path.style.strokeDashoffset = pathLength;
-    */
+    
     document.addEventListener("scroll", (e) => {
         var value = window.scrollY;
 
@@ -61,8 +60,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // SVG-path logic
 
-        //const newOffset = pathLength * (1 - (scrollPercentage));
-        //path.style.strokeDashoffset = newOffset >= 0 ? newOffset : 0;
+        const newOffset = pathLength * (1 - (scrollPercentage));
+        path.style.strokeDashoffset = newOffset >= 0 ? newOffset : 0;
     
         
     })
