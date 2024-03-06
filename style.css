@@ -5,6 +5,11 @@
 body{
     background-color: #C2D5B9 !important;
 }
+
+footer{
+    background-color:  #142f30;
+    height: 150px;
+}
 /*_______________________*/
 /*       Parallax        */
 /*_______________________*/
@@ -32,6 +37,7 @@ body{
     padding-top: 1rem;
     background-color: #193F40;
     color: #adbea4;
+    padding-bottom: 5rem;
 }
 
 .parallax img#birds{
@@ -62,6 +68,7 @@ body{
     z-index: 5;
     border-radius: 10px;
     font-family: mainFont;
+    z-index: 100;
 }
 
 ::-webkit-scrollbar {
@@ -84,18 +91,18 @@ body{
 }
 
 .texture-card{
-    background-color:#C2D5B9 !important;
-    padding: 10px 20px 20px;
-    border-radius: 15px !important;
-    color: #193F40;
-    margin-top: 2rem;
-    left: 100vw;
+    position: relative;
+    background-color:#163536 !important;
+    padding: 0px 30px 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #c2d5b9;
     font-family: mainFont;
     font-size: larger;
+    z-index: 5;
+    /*border:2px solid #74806f;*/
 }
-.text-content{
-    display: none;
-}
+
 /*
 .texture-card:hover{
     animation: heavy-mouse 0.4s forwards ease-in-out ;
@@ -104,8 +111,6 @@ body{
 .card-slide{
     animation: slide-in 2s forwards ease-in-out;
 }
-
-
 
 /*_______________________*/
 /*       CHAR            */
@@ -121,7 +126,7 @@ body{
     bottom: 0;
     right: 4vw;
     transform: rotate(-3deg);
-    filter: drop-shadow(20px 10px 10px  rgb(2, 2, 2, 0.7));
+    filter: drop-shadow(20px 10px 10px  rgb(194, 213, 185, 0.7));
 }
 
 .char-blend{
@@ -135,6 +140,47 @@ body{
     border-radius: 15px;
 }
 
+/*_______________________*/
+/*  Request fromular     */
+/*_______________________*/
+
+input, textarea{
+    background-color: #5aa787 !important;
+}
+
+
+.tab-nav button{
+    color:#fff!important;
+    border: 2px solid #263c32 !important;
+    background-color: #345d4c !important;
+
+}
+.tab-nav button.active{
+    background-color: #5aa787 !important;
+}
+.tab-nav button:hover{
+    color:#fff!important;
+    border: 2px solid #263c32 !important;
+    background-color: #457c65 !important;
+}
+.fewo-link{
+    text-decoration: none;
+}
+/*_______________________*/
+/*       SVG             */
+/*_______________________*/
+.path-spacer{
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 7rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 5rem;
+    background-color: #163536;
+    z-index: 4;
+    top:1rem;
+}
 
 /*_______________________*/
 /*       ANIMANTIONS     */

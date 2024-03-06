@@ -26,14 +26,6 @@ const initParallaxEffect = (scroll_value, viewportHeight) => {
     })
 }
 
-const initCardSlide = (viewportHeight) => {
-    const cards = document.querySelectorAll(".texture-card")
-
-    cards.forEach((card)=>{
-        if(card.getBoundingClientRect().top -viewportHeight <= 0)
-        setTimeout(()=>card.classList.add("card-slide"), 500)
-    })
-}
 window.addEventListener("DOMContentLoaded", () => {
 
     const viewportHeight = window.innerHeight;
@@ -43,25 +35,40 @@ window.addEventListener("DOMContentLoaded", () => {
     if (navigator.userAgent.indexOf("Firefox") !== -1){
         window.alert("Firefox is not supported")
     }
+
+    /*
+    const path = document.querySelectorAll('.svg-container svg path');
+    const pathLength = path.getTotalLength();
+    var oldPercentage = 0;
+    path.style.strokeDasharray = pathLength + ' ' + pathLength;
+    path.style.strokeDashoffset = pathLength;
+    */
     document.addEventListener("scroll", (e) => {
         var value = window.scrollY;
 
         initParallaxEffect(value, viewportHeight);
-        initCardSlide(viewportHeight);
     
 
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
-      
-        // Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
-        /*
+        
+        //Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
+        
         const r = Math.round((25 - 194) * scrollPercentage + 194);
         const g = Math.round((63 - 213) * scrollPercentage + 213);
         const b = Math.round((64 - 185) * scrollPercentage + 185);
         navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        */
+
+
+        // SVG-path logic
+
+        //const newOffset = pathLength * (1 - (scrollPercentage));
+        //path.style.strokeDashoffset = newOffset >= 0 ? newOffset : 0;
+    
+        
     })
 
-    document.querySelectorAll(".nav-link").forEach((navButton) => {
+
+    /*document.querySelectorAll(".nav-link").forEach((navButton) => {
         navButton.addEventListener("click", (e)=>{
             const visibleTextModule = Array.from(textModules).filter((textModule) => {
                 textModule.style.display = "none";
@@ -71,7 +78,5 @@ window.addEventListener("DOMContentLoaded", () => {
             console.log(visibleTextModule)
             visibleTextModule.style.display = "block";
         })
-    })
-    
-    
+    })*/
 })
