@@ -207,7 +207,7 @@ input, textarea{
 }
 path{
     stroke: #73d7ae; /* Change the stroke color as needed */
-    fill: #163536;
+    fill: transparent;
     stroke-width:2;
     z-index: 5;
 }
@@ -215,11 +215,9 @@ path{
 /*_______________________*/
 /*       UTILS           */
 /*_______________________*/
-.show{
-    fill: #000000;
-}
+
 .hidden{
-    fill: #163536;
+    opacity: 0;
 }
 
 /*_______________________*/

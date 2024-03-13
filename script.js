@@ -29,31 +29,31 @@ const initParallaxEffect = (scroll_value, viewportHeight) => {
 const animatPath = (path, duration) => {
     const length = path.getTotalLength();
     
-    path.style.transition = path.style.WebkitTransition = 'none';
-    path.style.strokeDasharray = length + ' ' + length;
-    path.style.strokeDashoffset = length;
+    // Set transition and dash array/offset using setAttribute for SVG elements
+    path.setAttribute('style', 'transition: none');
+    path.setAttribute('stroke-dasharray', `${length} ${length}`);
+    path.setAttribute('stroke-dashoffset', length);
 
-    path.getBoundingClientRect(); // Trigger reflow / repaint
+    // Trigger reflow / repaint
+    path.getBoundingClientRect();
 
-    path.style.transition = path.style.WebkitTransition = `stroke-dashoffset ${duration}ms ease-in-out`;
-    path.style.strokeDashoffset = '0';
+    // Set transition properties
+    path.setAttribute('style', `transition: stroke-dashoffset ${duration}ms ease-in-out`);
+    path.setAttribute('stroke-dashoffset', '0');
 }
 
 
 window.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+            console.log(entry.isIntersecting)
             if (entry.isIntersecting) {
-                //animatPath(entry);
+                animatPath(entry.target,1500)
                 entry.target.classList.remove('hidden');
             } else {
                 entry.target.classList.add('hidden');
             }
         });
-    }, {
-        root: null, // observe from the viewport
-        rootMargin: '0px', // no margin around the viewport
-        threshold: 1 // trigger when entire element is visible
     });
 
     const viewportHeight = window.innerHeight;
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
         window.alert("Firefox is not supported")
     }
     
-    const paths = document.querySelectorAll(".test-section");
+    const paths = document.querySelectorAll("path.hidden");
     paths.forEach((item)=>observer.observe(item));
 
     document.addEventListener("scroll", (e) => {
