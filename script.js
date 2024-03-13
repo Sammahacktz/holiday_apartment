@@ -26,7 +26,35 @@ const initParallaxEffect = (scroll_value, viewportHeight) => {
     })
 }
 
+const animatPath = (path, duration) => {
+    const length = path.getTotalLength();
+    
+    path.style.transition = path.style.WebkitTransition = 'none';
+    path.style.strokeDasharray = length + ' ' + length;
+    path.style.strokeDashoffset = length;
+
+    path.getBoundingClientRect(); // Trigger reflow / repaint
+
+    path.style.transition = path.style.WebkitTransition = `stroke-dashoffset ${duration}ms ease-in-out`;
+    path.style.strokeDashoffset = '0';
+}
+
+
 window.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                //animatPath(entry);
+                entry.target.classList.remove('hidden');
+            } else {
+                entry.target.classList.add('hidden');
+            }
+        });
+    }, {
+        root: null, // observe from the viewport
+        rootMargin: '0px', // no margin around the viewport
+        threshold: 1 // trigger when entire element is visible
+    });
 
     const viewportHeight = window.innerHeight;
     const navBar = document.querySelector(".nav-background")
@@ -35,19 +63,14 @@ window.addEventListener("DOMContentLoaded", () => {
     if (navigator.userAgent.indexOf("Firefox") !== -1){
         window.alert("Firefox is not supported")
     }
+    
+    const paths = document.querySelectorAll(".test-section");
+    paths.forEach((item)=>observer.observe(item));
 
-    
-    const path = document.getElementById("Pfad");
-    const pathLength = path.getTotalLength;
-    path.style.strokeDasharray = pathLength + ' ' + pathLength;
-    path.style.strokeDashoffset = pathLength;
-    
     document.addEventListener("scroll", (e) => {
+
         var value = window.scrollY;
-
         initParallaxEffect(value, viewportHeight);
-    
-
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
         
         //Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
@@ -57,25 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const b = Math.round((64 - 185) * scrollPercentage + 185);
         navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
-
-        // SVG-path logic
-
-        const newOffset = pathLength * (1 - (scrollPercentage));
-        path.style.strokeDashoffset = newOffset >= 0 ? newOffset : 0;
-    
         
     })
 
-
-    /*document.querySelectorAll(".nav-link").forEach((navButton) => {
-        navButton.addEventListener("click", (e)=>{
-            const visibleTextModule = Array.from(textModules).filter((textModule) => {
-                textModule.style.display = "none";
-
-                return textModule.id===navButton.id
-            })[0];
-            console.log(visibleTextModule)
-            visibleTextModule.style.display = "block";
-        })
-    })*/
 })

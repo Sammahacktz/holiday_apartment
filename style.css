@@ -118,9 +118,7 @@ footer{
     animation: heavy-mouse 0.4s forwards ease-in-out ;
 }
 */
-.card-slide{
-    animation: slide-in 2s forwards ease-in-out;
-}
+
 
 /*_______________________*/
 /*       CHAR            */
@@ -188,27 +186,40 @@ input, textarea{
     margin-top: 7rem;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    height: 5rem;
+    height: 4rem;
     background-color: #163536;
     z-index: 4;
     top:1rem;
 }
 
-.svg-container {
-    position: absolute;
-    width: 100vw;
-    z-index: 5;
+.path-spacer-large{
+    height: 6rem;
 }
 
-svg {
-    position: absolute;
-    top:-40vh;
-    left:-14vw;
+.path-container{
+    margin-left: 10px;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: -180px;
+    max-height: 150px;
+    max-width: 400px;
+    z-index: 5;
 }
 path{
     stroke: #73d7ae; /* Change the stroke color as needed */
-    fill: none;
-    stroke-width: 5;
+    fill: #163536;
+    stroke-width:2;
+    z-index: 5;
+}
+
+/*_______________________*/
+/*       UTILS           */
+/*_______________________*/
+.show{
+    fill: #000000;
+}
+.hidden{
+    fill: #163536;
 }
 
 /*_______________________*/
@@ -222,23 +233,6 @@ path{
     }
     100%{
         left: 60vw;
-    }
-}
-
-@keyframes slide-in {
-    0%{
-        overflow-x: hidden;
-        box-shadow: none;
-    }
-    70%{
-        overflow-x: hidden;
-        left: 1;
-        box-shadow: 1px 1px 1px 2px rgba(2, 2, 2, 1);
-    }
-    100%{
-        overflow-x: visible;
-        left: 0;
-        box-shadow: 15px 15px 10px 10px rgba(2, 2, 2, 0.6);
     }
 }
 
