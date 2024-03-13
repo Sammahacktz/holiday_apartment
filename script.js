@@ -46,7 +46,6 @@ const animatPath = (path, duration) => {
 window.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry.isIntersecting)
             if (entry.isIntersecting) {
                 animatPath(entry.target,1500)
                 entry.target.classList.remove('hidden');
