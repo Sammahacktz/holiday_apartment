@@ -27,17 +27,12 @@ const initParallaxEffect = (scroll_value, viewportHeight) => {
 }
 
 const animatPath = (path, duration) => {
+    if(!path.classList.contains('hidden')) return;
     const length = path.getTotalLength();
-    
-    // Set transition and dash array/offset using setAttribute for SVG elements
     path.setAttribute('style', 'transition: none');
     path.setAttribute('stroke-dasharray', `${length} ${length}`);
     path.setAttribute('stroke-dashoffset', length);
-
-    // Trigger reflow / repaint
     path.getBoundingClientRect();
-
-    // Set transition properties
     path.setAttribute('style', `transition: stroke-dashoffset ${duration}ms ease-in-out`);
     path.setAttribute('stroke-dashoffset', '0');
 }
@@ -48,20 +43,24 @@ window.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 animatPath(entry.target,1500)
-                entry.target.classList.remove('hidden');
-            } else {
-                entry.target.classList.add('hidden');
-            }
+                entry.target.classList.remove("hidden")
+            } 
         });
     });
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animatPath(entry.target,1500)
+                entry.target.classList.remove("hidden")
+            } 
+        });
+    });
+    const liftCable = document.getElementById("lift");
+    const liftImg = document.getElementById("lift-image");
     const viewportHeight = window.innerHeight;
-    const navBar = document.querySelector(".nav-background")
-    const textModules = document.querySelectorAll(".text-content")
+    const navBar = document.querySelector(".nav-background");
 
-    if (navigator.userAgent.indexOf("Firefox") !== -1){
-        window.alert("Firefox is not supported")
-    }
     
     const paths = document.querySelectorAll("path.hidden");
     paths.forEach((item)=>observer.observe(item));
@@ -69,6 +68,11 @@ window.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", (e) => {
 
         var value = window.scrollY;
+        middleScreenPos = Math.floor(value-window.innerHeight/2);
+        if(middleScreenPos-100 > 0){
+            liftCable.style.height = middleScreenPos-98+"px";
+            liftImg.style.marginTop = middleScreenPos - 100+"px";
+        }
         initParallaxEffect(value, viewportHeight);
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
         
