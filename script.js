@@ -37,7 +37,7 @@ const animatPath = (path, duration) => {
     path.setAttribute('stroke-dashoffset', '0');
 }
 
-
+var bottom = false;
 window.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -47,21 +47,13 @@ window.addEventListener("DOMContentLoaded", () => {
             } 
         });
     });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                animatPath(entry.target,1500)
-                entry.target.classList.remove("hidden")
-            } 
-        });
-    });
+    
     const liftCable = document.getElementById("lift");
     const liftImg = document.getElementById("lift-image");
     const viewportHeight = window.innerHeight;
     const navBar = document.querySelector(".nav-background");
 
-    
+
     const paths = document.querySelectorAll("path.hidden");
     paths.forEach((item)=>observer.observe(item));
 
@@ -69,13 +61,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
         var value = window.scrollY;
         middleScreenPos = Math.floor(value-window.innerHeight/2);
-        if(middleScreenPos-100 > 0){
+        if(middleScreenPos-100 > 0 && !bottom){
             liftCable.style.height = middleScreenPos-98+"px";
             liftImg.style.marginTop = middleScreenPos - 100+"px";
         }
         initParallaxEffect(value, viewportHeight);
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
-        
+        if((document.body.scrollHeight-window.innerHeight) == value){
+            bottom = true;
+        }
         //Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
         
         const r = Math.round((25 - 194) * scrollPercentage + 194);
@@ -83,6 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const b = Math.round((64 - 185) * scrollPercentage + 185);
         navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
+       
         
     })
 
