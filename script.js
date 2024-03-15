@@ -43,8 +43,23 @@ window.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 animatPath(entry.target,1500)
-                entry.target.classList.remove("hidden")
-            } 
+                entry.target.classList.remove("hidden");
+                entry.target.classList.add("path-shadow");
+            }else{
+                entry.target.classList.remove("path-shadow");
+            }
+        });
+    });
+
+    const speachObserver = new IntersectionObserver((tbs) => {
+        tbs.forEach((tb) => {
+            if (tb.isIntersecting && !bottom) {
+                tb.target.classList.add("show")
+                tb.target.parentNode.classList.add("shadow")
+            }else{
+                tb.target.classList.remove("show")
+                tb.target.parentNode.classList.remove("shadow")
+            }
         });
     });
     
@@ -55,10 +70,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     const paths = document.querySelectorAll("path.hidden");
+    const textboxes = document.querySelectorAll(".speach");
+    console.log(textboxes)
+    textboxes.forEach((speachCone)=>speachObserver.observe(speachCone));
     paths.forEach((item)=>observer.observe(item));
 
     document.addEventListener("scroll", (e) => {
-
         var value = window.scrollY;
         middleScreenPos = Math.floor(value-window.innerHeight/2);
         if(middleScreenPos-100 > 0 && !bottom){
@@ -75,10 +92,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const r = Math.round((25 - 194) * scrollPercentage + 194);
         const g = Math.round((63 - 213) * scrollPercentage + 213);
         const b = Math.round((64 - 185) * scrollPercentage + 185);
-        navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-
-       
-        
+        navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;        
     })
-
 })

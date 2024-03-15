@@ -85,7 +85,7 @@ footer{
 /*_______________________*/
 
 #text{
-    padding-left:20rem;
+    padding-left:400px;
 }
 
 .speach{
@@ -107,11 +107,19 @@ footer{
     font-family: mainFont;
     font-size: larger;
     z-index: 5;
+    max-width:  90%;
     /*border:2px solid #74806f;*/
+    transition: all 1s;
+
 }
-.texture-card p{
+.texture-card *{
     position: relative;
     z-index: 1;
+}
+
+.texture-card .speach{
+    position: absolute;
+    z-index: 0;
 }
 
 
@@ -186,9 +194,16 @@ input, textarea{
     background-color: #163536;
     z-index: 4;
     top:1rem;
+    max-width:  90%;
+
 }
 
-
+.shadow{
+    filter: drop-shadow(20px 35px 3px  rgba(0, 0, 0, 0.7));
+}
+.path-shadow{
+    filter: drop-shadow(2px 10px 3px  rgba(0, 0, 0, 0.7));
+}
 
 .path-spacer-large{
     height: 6rem;
@@ -216,6 +231,10 @@ path{
 
 .hidden{
     opacity: 0;
+    transition: all 0.5s;
+}
+.show{  
+    opacity: 1;
 }
 
 /*_______________________*/
@@ -241,6 +260,7 @@ path{
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
     z-index: 9;
+    width: max-content;
 
 }
 .lift-image img{
@@ -263,6 +283,7 @@ path{
     }
 }
 
+
 @keyframes heavy-mouse {
  
     0%{
@@ -272,3 +293,21 @@ path{
         box-shadow: 5px 5px 3px 3px rgba(2, 2, 2, 1);
     }
 }
+
+@media screen and (max-width: 1300px) {
+    #lift {
+      display: none;
+    }
+    #text{
+        padding-left:unset;
+    }
+    .path-spacer{
+        max-width: unset;
+    }
+    .texture-card{
+        max-width: unset;
+    }
+    .speach{
+        display: none;
+    }
+  }
