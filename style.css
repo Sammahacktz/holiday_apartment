@@ -133,7 +133,9 @@ footer{
     width: 140px;
     margin-top: 50px;
 }
-
+#bg{
+    position: absolute;
+}
 .char-blend{
     z-index: 100;
     background-color: #0D1A26;
