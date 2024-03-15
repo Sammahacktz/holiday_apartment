@@ -112,14 +112,28 @@ footer{
     transition: all 1s;
 
 }
+.texture-card-rights{
+    padding-top: 2rem;
+    max-width:  100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .texture-card *{
     position: relative;
     z-index: 1;
 }
-
+.top{
+    margin-top: 7rem;
+}
 .texture-card .speach{
     position: absolute;
     z-index: 0;
+}
+
+.rights{
+    max-width:  100%;
+    background-color:#193F40 !important;
 }
 
 
@@ -230,6 +244,14 @@ path{
 }
 .show{  
     opacity: 1;
+}
+footer a{
+    text-decoration: none;
+    font-size: x-large;
+    color: #73d7ae;
+}
+footer a:hover{
+    color: #407a62;
 }
 
 /*_______________________*/
