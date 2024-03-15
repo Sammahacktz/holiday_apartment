@@ -127,18 +127,11 @@ footer{
 /*_______________________*/
 /*       CHAR            */
 /*_______________________*/
-.char{
-    position: fixed;
-    bottom: -1rem;
-    right: -1rem;
-}
-.char img{
+#char{
     position: absolute;
-    height: 35vh;
-    bottom: 0;
-    right: 4vw;
-    transform: rotate(-3deg);
-    filter: drop-shadow(20px 10px 10px  rgb(194, 213, 185, 0.7));
+    height: 370px;
+    width: 140px;
+    margin-top: 50px;
 }
 
 .char-blend{
