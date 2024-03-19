@@ -1,22 +1,23 @@
 
+const parallax = [
+    document.getElementById("sky"),
+    document.getElementById("clouds"),
+    document.getElementById("birds"),
+    document.getElementById("hill_house"),
+    document.getElementById("hill_small"),
+    document.getElementById("hill_trees"),
+    document.getElementById("village"),
+]
 
-
-const initParallaxEffect = (scroll_value, viewportHeight) => {
+const initParallaxEffect = (scroll_value) => {
     const start_sensitivity = 2;
     const drop_sensitivity = 0.25;
-    const parallax = [
-        document.getElementById("sky"),
-        document.getElementById("clouds"),
-        document.getElementById("birds"),
-        document.getElementById("hill_house"),
-        document.getElementById("hill_small"),
-        document.getElementById("hill_trees"),
-        document.getElementById("village"),
-    ]
     parallax.forEach((layer, index)=>{
         layer.style.top = scroll_value * (start_sensitivity - (drop_sensitivity * index)) + "px"; //adjust
     })
+}
 
+const initPrallaxOnMouseMove = (viewportHeight) =>{
     document.addEventListener("mousemove", (e)=>{
         const offsetX = (e.clientX - window.innerWidth / 2) / 15;
         const offsetY = (e.clientY - viewportHeight / 1.4) / 15;
@@ -39,6 +40,16 @@ const animatPath = (path, duration) => {
 
 var bottom = false;
 window.addEventListener("DOMContentLoaded", () => {
+    const liftCable = document.getElementById("lift");
+    const liftImg = document.getElementById("lift-image");
+    const viewportHeight = window.innerHeight;
+    const navBar = document.querySelector(".nav-background");
+
+
+    const paths = document.querySelectorAll("path.hidden");
+    const textboxes = document.querySelectorAll(".speach");
+    
+    initPrallaxOnMouseMove(viewportHeight);
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -62,16 +73,6 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    
-    const liftCable = document.getElementById("lift");
-    const liftImg = document.getElementById("lift-image");
-    const viewportHeight = window.innerHeight;
-    const navBar = document.querySelector(".nav-background");
-
-
-    const paths = document.querySelectorAll("path.hidden");
-    const textboxes = document.querySelectorAll(".speach");
-    console.log(textboxes)
     textboxes.forEach((speachCone)=>speachObserver.observe(speachCone));
     paths.forEach((item)=>observer.observe(item));
 
@@ -82,7 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
             liftCable.style.height = middleScreenPos-98+"px";
             liftImg.style.marginTop = middleScreenPos - 100+"px";
         }
-        initParallaxEffect(value, viewportHeight);
+        initParallaxEffect(value);
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
         if((document.body.scrollHeight-window.innerHeight) == value){
             bottom = true;
