@@ -141,11 +141,12 @@ footer{
 /*_______________________*/
 /*       CHAR            */
 /*_______________________*/
-#char{
+.char{
     position: absolute;
     height: 370px;
-    width: 700px;
+    width: 700px !important;
     margin-top: 50px;
+    margin-left: 50px;
     transform: scaleX(-1);
 }
 #bg{
@@ -254,7 +255,9 @@ footer a{
 footer a:hover{
     color: #407a62;
 }
-
+.carousel-inner img{
+    margin: 0 auto;
+}
 /*_______________________*/
 /*       LIFT           */
 /*_______________________*/

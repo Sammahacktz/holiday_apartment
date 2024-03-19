@@ -26,6 +26,16 @@ const initPrallaxOnMouseMove = (viewportHeight) =>{
         })
     })
 }
+const initBootstrapComponents = () => {
+    const CarouselElements = document.querySelectorAll('.ImageCarousel')
+
+    CarouselElements.forEach((carousel) => {
+        new bootstrap.Carousel(carousel, {
+            interval: 20000,
+            touch: true
+            })
+    })
+}
 
 const animatPath = (path, duration) => {
     if(!path.classList.contains('hidden')) return;
@@ -39,16 +49,18 @@ const animatPath = (path, duration) => {
 }
 
 var bottom = false;
+var animationInProcess = false;
 window.addEventListener("DOMContentLoaded", () => {
     const liftCable = document.getElementById("lift");
     const liftImg = document.getElementById("lift-image");
     const viewportHeight = window.innerHeight;
     const navBar = document.querySelector(".nav-background");
-
-
+    const char =  document.getElementById("char");
+    const charNm = document.getElementById("charNm")
     const paths = document.querySelectorAll("path.hidden");
     const textboxes = document.querySelectorAll(".speach");
     
+    initBootstrapComponents();
     initPrallaxOnMouseMove(viewportHeight);
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -62,10 +74,30 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    const triggerChar = () => {
+        const hideChar = () => {
+            char.style.display = "none";
+            charNm.style.display = "block";
+            animationInProcess = false
+        }
+        if(char.style.display !== "none"){
+            hideChar();
+        }else{
+            charNm.style.display = "none";
+            char.setAttribute('src', char.src);
+            char.style.display = "block";
+            animationInProcess = true;
+            char.addEventListener("load",()=>{
+                setTimeout(hideChar, 2900);
+            })
+        }
+    }
+
     const speachObserver = new IntersectionObserver((tbs) => {
         tbs.forEach((tb) => {
             if (tb.isIntersecting && !bottom) {
                 tb.target.classList.add("show")
+                if(!animationInProcess)triggerChar()
                 tb.target.parentNode.classList.add("shadow")
             }else{
                 tb.target.classList.remove("show")
