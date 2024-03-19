@@ -52,7 +52,7 @@
       <div class="path-lift"></div>
       <div id="lift-image" class="lift-image">
         <img src="img/lift_bg.png" id="bg">
-        <img id="char" src="img/char1.png">
+        <img id="char" src="img/talking.gif">
         <img src="img/lift.png" alt="">
       </div>
     </div>
@@ -898,6 +898,50 @@
           M 75.51,61.44"></path>
           </svg>
         </div>
+        <!-- 
+
+<form id="contactForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="subject">Subject:</label><br>
+    <input type="text" id="subject" name="subject"><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br><br>
+    <button type="button" id="submit">Submit</button>
+</form>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("submit").addEventListener("click", function() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+        
+        // Send email using EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        }).then(function(response) {
+            alert("Email sent successfully!");
+            // Optionally, you can clear the form fields after sending the email
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+        }, function(error) {
+            alert("Failed to send email! Error: " + error);
+        });
+    });
+});
+</script>
+
+        -->
         <div class="path-spacer path-spacer-large"></div>
         <div class="texture-card">
           <div class="mb-3">
