@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", () => {
         tbs.forEach((tb) => {
             if (tb.isIntersecting && !bottom) {
                 tb.target.classList.add("show")
-                if(!animationInProcess)triggerChar()
+                //if(!animationInProcess)triggerChar()
                 tb.target.parentNode.classList.add("shadow")
             }else{
                 tb.target.classList.remove("show")

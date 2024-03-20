@@ -147,7 +147,6 @@ footer{
     width: 700px !important;
     margin-top: 50px;
     margin-left: 50px;
-    transform: scaleX(-1);
 }
 #bg{
     position: absolute;
@@ -171,16 +170,28 @@ input, textarea{
     background-color: #b8d6c9 !important;
 }
 
+.tab-content-bg{
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+    background-color: #5aa787;
+}
 
 .tab-nav button{
     color:#fff!important;
+    margin-top: -2px;
+    margin-bottom: 2px;
     border: 2px solid #263c32 !important;
     background-color: #345d4c !important;
-    border-top-left-radius: 10px !important;
-    border-top-right-radius: 10px !important;
 
 }
+
 .tab-nav button.active{
+    background-color: #5aa787 !important;
+    margin-right: -40px !important;
+    transition: all 0.1s;
+    border-bottom-right-radius: -50px;
+}
+.tab-nav button.active:hover{
     background-color: #5aa787 !important;
 }
 .tab-nav button:hover{
@@ -191,6 +202,8 @@ input, textarea{
 .fewo-link{
     text-decoration: none;
 }
+
+
 /*_______________________*/
 /*       SVG             */
 /*_______________________*/
@@ -207,6 +220,16 @@ input, textarea{
     top:1rem;
     max-width:  90%;
 
+}
+#logo{
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    max-width: 900px;
+    min-width: 400px;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
 }
 
 .shadow{
