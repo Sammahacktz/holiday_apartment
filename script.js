@@ -59,6 +59,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const charNm = document.getElementById("charNm")
     const paths = document.querySelectorAll("path.hidden");
     const textboxes = document.querySelectorAll(".speach");
+    const images = document.querySelectorAll(".carousel-item img");
+    const modalImage = document.getElementById("modal-image")
+    const ImageModalLabel = document.getElementById("ImageModalLabel")
+
+    images.forEach((img)=>{
+        img.addEventListener("click",()=>{
+            modalImage.src=img.src
+            ImageModalLabel.innerText=img.alt
+        })
+    })
     
     initBootstrapComponents();
     initPrallaxOnMouseMove(viewportHeight);

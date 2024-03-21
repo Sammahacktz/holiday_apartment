@@ -319,6 +319,30 @@ footer a:hover{
     display: inline-block;
     z-index: 10;
 }
+/*_______________________*/
+/*       MODAL           */
+/*_______________________*/
+.fewo-modal{
+    min-width: fit-content;
+    max-height: 85vh;
+}
+.fewo-modal img{
+    max-width: 89vw;
+    max-height: 89vh;
+    border-radius: 10px;
+}
+.fewo-modal-content{
+    background-color: #193F40 !important;
+}
+
+.fewo-modal-content button{
+    background-color: #3affb0 !important;
+}
+.fewo-modal-header{
+    border-bottom: 2px solid #5AA787 !important;
+    color:#fff;
+}
+
 
 /*_______________________*/
 /*       ANIMANTIONS     */
