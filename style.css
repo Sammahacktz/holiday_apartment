@@ -173,6 +173,7 @@ input, textarea{
 .tab-content-bg{
     padding: 10px 10px 10px 10px;
     border-radius: 20px;
+    border-top-left-radius: 0px;
     background-color: #5aa787;
     margin-left: -40px;
 }

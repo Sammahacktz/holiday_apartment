@@ -149,8 +149,8 @@
         <div class="path-spacer"></div>
         <div class="texture-card">
           <div class="speach hidden"></div>
-          <p></p>
-
+          <p>Herzlich willkommen in unserer traumhaften Ferienwohnung! Wir freuen uns, Sie hier begrüßen zu dürfen und Ihnen einen unvergesslichen Aufenthalt zu ermöglichen. Tauchen Sie ein in eine Oase der Erholung und lassen Sie den Alltag hinter sich.</p>
+          <p class="pb-2">Unsere liebevoll eingerichtete Ferienwohnung bietet Ihnen nicht nur Komfort und Gemütlichkeit, sondern auch eine erstklassige Lage, um die Schönheit unserer Region zu erkunden. Egal, ob Sie die malerische Natur erkunden möchten, kulturelle Highlights erleben wollen oder einfach nur die Seele baumeln lassen möchten - hier sind Sie genau richtig.</p>
           <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3 tab-nav tab-nav-integrated" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <button class="nav-link active" id="v-pills-nature-tab" data-bs-toggle="pill" data-bs-target="#v-pills-nature" type="button" role="tab" aria-controls="v-pills-nature" aria-selected="true">Natur</button>
@@ -162,40 +162,48 @@
             </div>
             <div class="tab-content w-100 tab-content-bg" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="v-pills-nature" role="tabpanel" aria-labelledby="v-pills-nature-tab" tabindex="0">
-                <div id="carouselExampleCaptions" class="carousel slide ImageCarousel">
+                <div id="carouselNatureCaptions" class="carousel slide ImageCarousel">
                   <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselNatureCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ferienwohnung im Winter"></button>
+                    <button type="button" data-bs-target="#carouselNatureCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselNatureCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselNatureCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
                   </div>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="img/fewo_images/garden/garden_table.jpg" class="d-block w-100" alt="...">
+                      <img src="img/fewo_images/nature/IMG_6406.JPG" class="d-block w-100" alt="Ferienwohnung im Winter">
                       <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5>Winter in Seiffen</h5>
+                        <p>Ferienwohnung während den Wintermonaten</p>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="img/fewo_images/garden/IMG_2018-01.JPG" class="d-block w-100" alt="...">
+                      <img src="img/fewo_images/nature/IMG_6426.JPG" class="d-block w-100" alt="Skigebiet Seiffen">
                       <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5>Winter in Seiffen</h5>
+                        <p>Skigebiet Seiffen</p>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="img/fewo_images/garden/IMG_2023-011075 (2).JPG" class="d-block w-100" alt="...">
+                      <img src="img/fewo_images/nature/IMG_3313.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/fewo_images/nature/IMG_9923.JPG" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
                       </div>
                     </div>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselNatureCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselNatureCaptions" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
@@ -203,16 +211,161 @@
               </div>
               <div class="tab-pane fade" id="v-pills-garden" role="tabpanel" aria-labelledby="v-pills-garden-tab" tabindex="0">
                 <div class="tab-pane fade show active" id="v-pills-nature" role="tabpanel" aria-labelledby="v-pills-nature-tab" tabindex="0">
-                  Garten
+                  <div id="carouselGardenCaptions" class="carousel slide ImageCarousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselGardenCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselGardenCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselGardenCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/fewo_images/garden/IMG_2023-011075 (2).JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Third slide label</h5>
+                          <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/fewo_images/garden/garden_table.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>First slide label</h5>
+                          <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/fewo_images/garden/IMG_2018-01.JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselGardenCaptions" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselGardenCaptions" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="v-pills-livingroom" role="tabpanel" aria-labelledby="v-pills-livingroom-tab" tabindex="0">Wohnzimmer</div>
-              <div class="tab-pane fade" id="v-pills-kitchen" role="tabpanel" aria-labelledby="v-pills-kitchen-tab" tabindex="0">küche</div>
-              <div class="tab-pane fade" id="v-pills-bedroom" role="tabpanel" aria-labelledby="v-pills-bedroom-tab" tabindex="0">bedroom</div>
-              <div class="tab-pane fade" id="v-pills-bath" role="tabpanel" aria-labelledby="v-pills-bath-tab" tabindex="0">bad</div>
+              <div class="tab-pane fade" id="v-pills-livingroom" role="tabpanel" aria-labelledby="v-pills-livingroom-tab" tabindex="0">
+                <div id="carouselLivingRoomCaptions" class="carousel slide ImageCarousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselLivingRoomCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/fewo_images/livingroom/IMG_4413.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button hidden class="carousel-control-prev" type="button" data-bs-target="#carouselLivingRoomCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button hidden class="carousel-control-next" type="button" data-bs-target="#carouselLivingRoomCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-kitchen" role="tabpanel" aria-labelledby="v-pills-kitchen-tab" tabindex="0">
+                <div id="carouselKitchenCaptions" class="carousel slide ImageCarousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselKitchenCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselKitchenCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/fewo_images/kitchen/IMG_4419.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/fewo_images/kitchen/IMG_7993.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselKitchenCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselKitchenCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-bedroom" role="tabpanel" aria-labelledby="v-pills-bedroom-tab" tabindex="0">
+                <div id="carouselBedroomCaptions" class="carousel slide ImageCarousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselBedroomCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselBedroomCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/fewo_images/bedrooms/bedroom1.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/fewo_images/bedrooms/bedroom2.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselBedroomCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselBedroomCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-bath" role="tabpanel" aria-labelledby="v-pills-bath-tab" tabindex="0">
+                <div id="carouselBathCaptions" class="carousel slide ImageCarousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselBathCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/fewo_images/bath/IMG_4412.JPG" class="d-block w-100" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button hidden class="carousel-control-prev" type="button" data-bs-target="#carouselBathCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button hidden class="carousel-control-next" type="button" data-bs-target="#carouselBathCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          
+          <p class="pt-3">Wir stehen Ihnen jederzeit gerne zur Verfügung, um Ihren Aufenthalt so angenehm wie möglich zu gestalten. Zögern Sie nicht, uns bei Fragen oder Wünschen zu kontaktieren. Ihre Zufriedenheit liegt uns am Herzen.</p>
         </div>
       </div>
       <!--- Prices --->
