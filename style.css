@@ -175,28 +175,22 @@ input, textarea{
     border-radius: 20px;
     border-top-left-radius: 0px;
     background-color: #5aa787;
-    margin-left: -40px;
+    margin-left: 2px;
 }
 
 .tab-nav button{
     color:#fff!important;
-    margin-top: -2px;
-    margin-bottom: 2px;
     border: 2px solid #263c32 !important;
+    border-bottom: none !important;
     background-color: #345d4c !important;
 }
-
-.tab-nav-integrated button{
-    padding-right: 50px !important;
-    border-bottom-left-radius: 10px !important;
-    border-top-left-radius: 10px !important;
-
+.tab-nav{
+    border-bottom: none !important;
 }
 
 .tab-nav button.active{
     background-color: #5aa787 !important;
     transition: all 0.1s;
-    border-bottom-right-radius: -50px;
 }
 .tab-nav button.active:hover{
     background-color: #5aa787 !important;
@@ -205,6 +199,7 @@ input, textarea{
     color:#fff!important;
     border: 2px solid #263c32 !important;
     background-color: #457c65 !important;
+    border-bottom: none !important;
 }
 .fewo-link{
     text-decoration: none;
@@ -365,7 +360,6 @@ footer a:hover{
 
 
 @keyframes heavy-mouse {
- 
     0%{
         box-shadow: 15px 15px 10px 10px rgba(2, 2, 2, 0.6);
     }
@@ -375,6 +369,9 @@ footer a:hover{
 }
 
 @media screen and (max-width: 1300px) {
+    *{
+        font-size: large !important;
+    }
     #lift {
       display: none;
     }
@@ -390,4 +387,14 @@ footer a:hover{
     .speach{
         display: none;
     }
-  }
+}
+  
+@media screen and (max-width: 500px) {  
+    *{
+        font-size: small !important;
+    }
+    #logo{
+        max-width: 900px;
+        min-width: 200px;
+    }
+}

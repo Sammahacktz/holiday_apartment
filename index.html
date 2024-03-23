@@ -165,15 +165,16 @@
           <div class="speach hidden"></div>
           <p>Herzlich willkommen in unserer traumhaften Ferienwohnung! Wir freuen uns, Sie hier begrüßen zu dürfen und Ihnen einen unvergesslichen Aufenthalt zu ermöglichen. Tauchen Sie ein in eine Oase der Erholung und lassen Sie den Alltag hinter sich.</p>
           <p class="pb-2">Unsere liebevoll eingerichtete Ferienwohnung bietet Ihnen nicht nur Komfort und Gemütlichkeit, sondern auch eine erstklassige Lage, um die Schönheit unserer Region zu erkunden. Egal, ob Sie die malerische Natur erkunden möchten, kulturelle Highlights erleben wollen oder einfach nur die Seele baumeln lassen möchten - hier sind Sie genau richtig.</p>
-          <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-3 tab-nav tab-nav-integrated" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <button class="nav-link active" id="v-pills-nature-tab" data-bs-toggle="pill" data-bs-target="#v-pills-nature" type="button" role="tab" aria-controls="v-pills-nature" aria-selected="true">Natur</button>
-              <button class="nav-link" id="v-pills-garden-tab" data-bs-toggle="pill" data-bs-target="#v-pills-garden" type="button" role="tab" aria-controls="v-pills-garden" aria-selected="false">Garten</button>
-              <button class="nav-link" id="v-pills-livingroom-tab" data-bs-toggle="pill" data-bs-target="#v-pills-livingroom" type="button" role="tab" aria-controls="v-pills-livingroom" aria-selected="false">Wohnzimmer</button>
-              <button class="nav-link" id="v-pills-kitchen-tab" data-bs-toggle="pill" data-bs-target="#v-pills-kitchen" type="button" role="tab" aria-controls="v-pills-kitchen" aria-selected="false">Küche</button>
-              <button class="nav-link" id="v-pills-bedroom-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bedroom" type="button" role="tab" aria-controls="v-pills-bedroom" aria-selected="false">Schlafzimmer</button>
-              <button class="nav-link" id="v-pills-bath-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bath" type="button" role="tab" aria-controls="v-pills-bath" aria-selected="false">Bad</button>
-            </div>
+            <nav>
+              <div class="nav nav-tabs tab-nav" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="v-pills-nature-tab" data-bs-toggle="pill" data-bs-target="#v-pills-nature" type="button" role="tab" aria-controls="v-pills-nature" aria-selected="true">Natur</button>
+                <button class="nav-link" id="v-pills-garden-tab" data-bs-toggle="pill" data-bs-target="#v-pills-garden" type="button" role="tab" aria-controls="v-pills-garden" aria-selected="false">Garten</button>
+                <button class="nav-link" id="v-pills-livingroom-tab" data-bs-toggle="pill" data-bs-target="#v-pills-livingroom" type="button" role="tab" aria-controls="v-pills-livingroom" aria-selected="false">Wohnzimmer</button>
+                <button class="nav-link" id="v-pills-kitchen-tab" data-bs-toggle="pill" data-bs-target="#v-pills-kitchen" type="button" role="tab" aria-controls="v-pills-kitchen" aria-selected="false">Küche</button>
+                <button class="nav-link" id="v-pills-bedroom-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bedroom" type="button" role="tab" aria-controls="v-pills-bedroom" aria-selected="false">Schlafzimmer</button>
+                <button class="nav-link" id="v-pills-bath-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bath" type="button" role="tab" aria-controls="v-pills-bath" aria-selected="false">Bad</button>
+             </div>
+            </nav>
             <div class="tab-content w-100 tab-content-bg" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="v-pills-nature" role="tabpanel" aria-labelledby="v-pills-nature-tab" tabindex="0">
                 <div id="carouselNatureCaptions" class="carousel slide ImageCarousel">
@@ -326,7 +327,6 @@
                 </div>
               </div>
             </div>
-          </div>
           <p class="pt-3">Wir stehen Ihnen jederzeit gerne zur Verfügung, um Ihren Aufenthalt so angenehm wie möglich zu gestalten. Zögern Sie nicht, uns bei Fragen oder Wünschen zu kontaktieren. Ihre Zufriedenheit liegt uns am Herzen.</p>
         </div>
       </div>
@@ -412,10 +412,10 @@
           <div class="speach hidden"></div>
           <ul class="nav nav-tabs tab-nav" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main-tab-pane" type="button" role="tab" aria-controls="main-tab-pane" aria-selected="true">Hauptsaison (Oktober-März)</button>
+              <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main-tab-pane" type="button" role="tab" aria-controls="main-tab-pane" aria-selected="true">Hauptsaison<br>(Oktober-März)</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="side-tab" data-bs-toggle="tab" data-bs-target="#side-tab-pane" type="button" role="tab" aria-controls="side-tab-pane" aria-selected="false">Nebensaison (April-September)</button>
+              <button class="nav-link" id="side-tab" data-bs-toggle="tab" data-bs-target="#side-tab-pane" type="button" role="tab" aria-controls="side-tab-pane" aria-selected="false">Nebensaison<br>(April-September)</button>
             </li>
           </ul>
           <div class="tab-content px-3">
