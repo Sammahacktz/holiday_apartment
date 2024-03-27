@@ -37,6 +37,13 @@ const initBootstrapComponents = () => {
     })
 }
 
+const lerpColor = (color1, color2, t) => {
+    const r = Math.round((color1[0] - color2[0]) * t + color2[0]);
+    const g = Math.round((color1[1] - color2[1]) * t + color2[1]);
+    const b = Math.round((color1[2] - color2[2]) * t + color2[2]);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 const animatPath = (path, duration) => {
     if(!path.classList.contains('hidden')) return;
     const length = path.getTotalLength();
@@ -55,6 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const liftImg = document.getElementById("lift-image");
     const viewportHeight = window.innerHeight;
     const navBar = document.querySelector(".nav-background");
+    const navBarButtons = document.querySelectorAll(".fewo-nav-links")
     const char =  document.getElementById("char");
     const charNm = document.getElementById("charNm")
     const paths = document.querySelectorAll("path.hidden");
@@ -84,30 +92,11 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const triggerChar = () => {
-        const hideChar = () => {
-            char.style.display = "none";
-            charNm.style.display = "block";
-            animationInProcess = false
-        }
-        if(char.style.display !== "none"){
-            hideChar();
-        }else{
-            charNm.style.display = "none";
-            char.setAttribute('src', char.src);
-            char.style.display = "block";
-            animationInProcess = true;
-            char.addEventListener("load",()=>{
-                setTimeout(hideChar, 2900);
-            })
-        }
-    }
 
     const speachObserver = new IntersectionObserver((tbs) => {
         tbs.forEach((tb) => {
             if (tb.isIntersecting && !bottom) {
                 tb.target.classList.add("show")
-                //if(!animationInProcess)triggerChar()
                 tb.target.parentNode.classList.add("shadow")
             }else{
                 tb.target.classList.remove("show")
@@ -132,9 +121,19 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         //Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
         
+        const color1 = [25, 63, 64];
+        const color2 = [194, 213, 185];
+
         const r = Math.round((25 - 194) * scrollPercentage + 194);
         const g = Math.round((63 - 213) * scrollPercentage + 213);
         const b = Math.round((64 - 185) * scrollPercentage + 185);
-        navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;        
+        navBar.style.backgroundColor = lerpColor(color1, color2, scrollPercentage);
+        
+        navBarButtons.forEach((navLink)=>{
+            const r = Math.round((25 - 194) * scrollPercentage + 194);
+            const g = Math.round((63 - 213) * scrollPercentage + 213);
+            const b = Math.round((64 - 185) * scrollPercentage + 185);
+            navLink.setAttribute('style', `color: ${lerpColor(color2, color1, scrollPercentage)}`)
+        })
     })
 })

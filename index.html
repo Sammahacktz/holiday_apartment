@@ -13,23 +13,23 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">FeWo Seiffen</a>
+        <a class="navbar-brand fewo-nav-links" href="#">FeWo Seiffen</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#seiffen">Seiffen</a>
+              <a class="nav-link fewo-nav-links" href="#seiffen">Seiffen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#activities">Aktivitäten</a>
+              <a class="nav-link fewo-nav-links" href="#activities">Aktivitäten</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#fewo">Ferienwohnung</a>
+              <a class="nav-link fewo-nav-links" href="#fewo">Ferienwohnung</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#price">Preise</a>
+              <a class="nav-link fewo-nav-links" href="#price">Preise</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#request">Buchungsanfrage</a>
+              <a class="nav-link fewo-nav-links" href="#request">Buchungsanfrage</a>
             </li>
           </ul>
         </div>
@@ -54,7 +54,7 @@
       <div id="lift-image" class="lift-image">
         <img src="img/lift_bg.png" id="bg">
         <!--<img id="charNm" class="char" src="img/char_not_moving.png">-->
-        <!--<img id="char" class="char" src="img/char2.gif" autoplay="true"> -->
+        <img id="char" class="char" src="img/char3.png">
         <img src="img/lift.png" alt="">
       </div>
     </div>
@@ -420,18 +420,18 @@
           </ul>
           <div class="tab-content px-3">
             <div class="tab-pane fade show active" id="main-tab-pane" role="tabpanel" aria-labelledby="main-tab" tabindex="0">
-              <p class="mt-3 mb-0 p-0">2 Personen pro Nacht: ................... €45,00</p>
-              <p class="m-0 p-0">Je weitere Person pro Nacht: ....... €12,00</p>
-              <p class="m-0 p-0">Kind 4-13 Jahre: ............................. €8,00</p>
-              <p class="m-0 p-0">Kind bis 3 Jahre: .............................. Frei</p>
-              <p class="m-0 p-0">Endreinigung einmalig: ................. 15,00 Euro</p>
+              <p class="mt-3 mb-0 p-0">2 Personen pro Nacht: ................ €45,00</p>
+              <p class="m-0 p-0">Je weitere Person pro Nacht: .... €12,00</p>
+              <p class="m-0 p-0">Kind 4-13 Jahre: .......................... €8,00</p>
+              <p class="m-0 p-0">Kind bis 3 Jahre: ........................... Frei</p>
+              <p class="m-0 p-0">Endreinigung einmalig: .............. 15,00 Euro</p>
             </div>
             <div class="tab-pane fade" id="side-tab-pane" role="tabpanel" aria-labelledby="side-tab" tabindex="0">
-              <p class="mt-3 mb-0 p-0">2 Personen pro Nacht: ................... €42,00</p>
-              <p class="m-0 p-0">Je weitere Person pro Nacht: ....... €10,00</p>
-              <p class="m-0 p-0">Kind 4-13 Jahre: ............................. €8,00</p>
-              <p class="m-0 p-0">Kind bis 3 Jahre: .............................. Frei</p>
-              <p class="m-0 p-0">Endreinigung einmalig: ................. 15,00 Euro</p>
+              <p class="mt-3 mb-0 p-0">2 Personen pro Nacht: ................ €42,00</p>
+              <p class="m-0 p-0">Je weitere Person pro Nacht: .... €10,00</p>
+              <p class="m-0 p-0">Kind 4-13 Jahre: .......................... €8,00</p>
+              <p class="m-0 p-0">Kind bis 3 Jahre: ........................... Frei</p>
+              <p class="m-0 p-0">Endreinigung einmalig: .............. 15,00 Euro</p>
             </div>
           </div>
           <p class="mt-5 mb-0">-Wasser, Strom, Heizung, Bettwäsche und Handtücher sind bei uns inklusive.</p>
@@ -1097,7 +1097,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         -->
         <div class="path-spacer path-spacer-large"></div>
-        <div class="texture-card">
+        <div class="texture-card fewo-request">
           <div class="mb-3">
             <label for="mail" class="form-label">Ihre Email:</label>
             <input type="email" class="form-control" id="mail" placeholder="name@beispiel.de">
@@ -1114,7 +1114,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <label for="request-text" class="form-label">Anfrage:</label>
             <textarea class="form-control" id="request-text" rows="5"></textarea>
           </div>
-          <button>Absenden</button>
+          <button class="fewo-request-send">Absenden</button>
         </div>
       </div>
     </div>
