@@ -63,13 +63,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const viewportHeight = window.innerHeight;
     const navBar = document.querySelector(".nav-background");
     const navBarButtons = document.querySelectorAll(".fewo-nav-links")
-    const char =  document.getElementById("char");
-    const charNm = document.getElementById("charNm")
     const paths = document.querySelectorAll("path.hidden");
     const textboxes = document.querySelectorAll(".speach");
     const images = document.querySelectorAll(".carousel-item img");
     const modalImage = document.getElementById("modal-image")
     const ImageModalLabel = document.getElementById("ImageModalLabel")
+    const navButton = navBar.querySelector("button.navbar-toggler-icon")
 
     images.forEach((img)=>{
         img.addEventListener("click",()=>{
@@ -128,12 +127,19 @@ window.addEventListener("DOMContentLoaded", () => {
         const g = Math.round((63 - 213) * scrollPercentage + 213);
         const b = Math.round((64 - 185) * scrollPercentage + 185);
         navBar.style.backgroundColor = lerpColor(color1, color2, scrollPercentage);
-        
+        if(navButton)
+        navButton.style.backgroundColor = lerpColor(color1, color2, scrollPercentage);
         navBarButtons.forEach((navLink)=>{
             const r = Math.round((25 - 194) * scrollPercentage + 194);
             const g = Math.round((63 - 213) * scrollPercentage + 213);
             const b = Math.round((64 - 185) * scrollPercentage + 185);
             navLink.setAttribute('style', `color: ${lerpColor(color2, color1, scrollPercentage)}`)
+            navLink.addEventListener("click", (e)=>{
+                if(navButton){
+                    console.log("jnnn")
+                    navButton.click()
+                }
+            })
         })
     })
 })
