@@ -38,6 +38,7 @@ footer{
     background-color: #193F40;
     color: #adbea4;
     padding-bottom: 5rem;
+    min-height: 85vh;
 }
 
 .parallax img#birds{
@@ -57,26 +58,39 @@ footer{
     font-size: 6rem;
     text-shadow: 6px 3px rgba(2, 2, 2, 0.6);
 }
-.nav-background{
+.nav-background, .dark-nav{
     margin-top: 10px;
     min-width: 95vw;
     max-width: 95vw;
     margin-left: 2.5vw;
     position: fixed !important;
     background-color: #C2D5B9;
-    box-shadow: 20px 10px 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 20px 10px 10px 10px rgba(0, 0, 0, 0.4);
     z-index: 5;
     border-radius: 10px;
     font-family: mainFont;
     z-index: 100;
 }
+
+.dark-nav{
+    background-color: rgb(25, 63, 64);
+    box-shadow: 20px 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+.dark-nav a{
+    color: #3affb0 !important;
+}
+
+
 ::-webkit-scrollbar {
-    width: 1px; /* Adjust as needed */
+    width: 15px; /* Adjust as needed */
     background-color: #193F40;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #193F40; /* Hide the scrollbar thumb */
+    background-color: #2b6367; /* Hide the scrollbar thumb */
+}
+.fewo-nav-links:hover{
+    font-weight: 600;
 }
 
 /*_______________________*/
@@ -145,7 +159,12 @@ footer{
     height: 350px;
     width: 150px !important;
     margin-top: 30px;
+    color: rgb(222, 231, 218);
     margin-left: 50px;
+    filter:drop-shadow(20px 20px 3px  rgba(0, 0, 0, 0.4));
+}
+#lift-image{
+    filter:drop-shadow(20px 20px 5px  rgba(0, 0, 0, 0.4));
 }
 #bg{
     position: absolute;
@@ -203,9 +222,8 @@ input, textarea{
     background-color: #457c65 !important;
     border-bottom: none !important;
 }
-.fewo-link{
-    text-decoration: none;
-}
+
+
 
 
 /*_______________________*/
@@ -273,6 +291,9 @@ path{
 }
 .show{  
     opacity: 1;
+}
+.fewo-link{
+    color: #4e9075 !important;
 }
 footer a{
     text-decoration: none;
@@ -369,8 +390,30 @@ footer a:hover{
     background-color: #457C65;
     border-radius: 5px;
     filter: drop-shadow(2px 10px 3px  rgba(0, 0, 0, 0.7))
-
 }
+
+/*_______________________*/
+/*          MAP          */
+/*_______________________*/
+#map{
+    border: 3px solid #457C65;
+    border-radius: 20px;
+}
+
+.alert-container{
+    position: fixed;
+    height: 100px;
+    width: 300px;
+    right: 0;
+    top:80vh;
+    z-index: 100;
+}
+.fewo-toast div{
+    background-color: #407a62 !important;
+    color: #fff;
+}
+
+
 /*_______________________*/
 /*       ANIMANTIONS     */
 /*_______________________*/
@@ -423,5 +466,10 @@ footer a:hover{
     #logo{
         max-width: 900px;
         min-width: 200px;
+    }
+    .path-container{
+        max-height: 200px;
+        max-width: 300px;
+        z-index: 5;
     }
 }

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Ferienwohnung Lippmann</title>
   </head>
@@ -39,25 +40,20 @@
         <!--- datenschutz --->
         <div id="datenschutz" class="container">
           <div class="texture-card texture-card-rights top shadow">
-            <h1>Impressum</h1>
             <p>
-                <strong>Herausgeber:</strong><br>
                 Familie Lippmann<br>
                 Jahnstraße 4<br>
                 D-09548 Kurort Seiffen<br>
                 Tel.: 037362 / 76225
             </p>
-            <p>
-                <strong>Webseitenersteller</strong>: Charlie-Luis Reichelt 
-            </p>
-            <p>
-                Wir sind bemüht, die Angaben so aktuell wie möglich, zu halten. Alle Rechte vorbehalten. Nachdruck sowie Übernahme in andere Anwendungen von Datenverarbeitungsanlagen jeglicher Art, auch auszugsweise, sind nur mit ausdrücklicher Genehmigung der Familie Lippmann zulässig.
-            </p>
+            <div id="map" style="height: 400px;"></div>
+            <p class="pt-4">Ferienwohnung in <a class="fewo-link" target="_blank" href="https://www.google.com/maps/place/Ferienwohnung+und+Dachdeckerei+Heiko+Lippmann/@50.6498108,13.4494005,19.42z/data=!4m6!3m5!1s0x4709f9ffa82c7f5b:0x7307afc1b4a99ebf!8m2!3d50.6497719!4d13.4494301!16s%2Fg%2F1tgfvbd9?entry=ttu">Google Maps</a> öffenen.</p>            
           </div>
         </div>
       </div>
+      <script src="map.js" defer></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </body>
   <footer class="footer">
     <div class="container text-center pt-5">

@@ -54,10 +54,40 @@ const animatPath = (path, duration) => {
     path.setAttribute('style', `transition: stroke-dashoffset ${duration}ms ease-in-out`);
     path.setAttribute('stroke-dashoffset', '0');
 }
+const initMailConnection = () => {
 
+    const toastS = document.getElementById('alert-success');
+    const toastF = document.getElementById('alert-error');
+
+    const toastSuccess = bootstrap.Toast.getOrCreateInstance(toastS);
+    const toastFailed = bootstrap.Toast.getOrCreateInstance(toastF);
+
+    document.getElementById("submit").addEventListener("click", ()=>{
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        toastSuccess.show()
+
+        emailjs.send("service_cr6ggjr","template_0kmmqzp",{
+            c_name: name,
+            c_message: email,
+            c_email: message,
+        },"017i8UscqUysCUzsQ").then(function(response) {
+            toastSuccess.show()
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        }, function(error) {
+            toastFailed.show()
+            alert("Failed to send email! Error: " + error);
+        });
+    });
+}
 var bottom = false;
 var animationInProcess = false;
+
 window.addEventListener("DOMContentLoaded", () => {
+    initMailConnection()
     const liftCable = document.getElementById("lift");
     const liftImg = document.getElementById("lift-image");
     const viewportHeight = window.innerHeight;
@@ -68,7 +98,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll(".carousel-item img");
     const modalImage = document.getElementById("modal-image")
     const ImageModalLabel = document.getElementById("ImageModalLabel")
-    const navButton = navBar.querySelector("button .navbar-toggler-icon")
+    const navButton = navBar.querySelector("button.navbar-toggler")
+
 
     images.forEach((img)=>{
         img.addEventListener("click",()=>{
@@ -76,7 +107,6 @@ window.addEventListener("DOMContentLoaded", () => {
             ImageModalLabel.innerText=img.alt
         })
     })
-    
     initBootstrapComponents();
     initPrallaxOnMouseMove(viewportHeight);
     const observer = new IntersectionObserver((entries) => {
@@ -94,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const speachObserver = new IntersectionObserver((tbs) => {
         tbs.forEach((tb) => {
-            if (tb.isIntersecting && !bottom) {
+            if (tb.isIntersecting) {
                 tb.target.classList.add("show")
                 tb.target.parentNode.classList.add("shadow")
             }else{
@@ -109,25 +139,23 @@ window.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", (e) => {
         var value = window.scrollY;
         middleScreenPos = Math.floor(value-window.innerHeight/2);
-        if(middleScreenPos-100 > 0 && !bottom){
+        if(middleScreenPos-100 > 0){
             liftCable.style.height = middleScreenPos-98+"px";
             liftImg.style.marginTop = middleScreenPos - 100+"px";
         }
         initParallaxEffect(value);
         const scrollPercentage = (value / viewportHeight) > 1 ? 1 : (value / viewportHeight);
-        if((document.body.scrollHeight-window.innerHeight) == value){
-            bottom = true;
-        }
-        //Interpolate the color between #C2D5B9 and #193F40 based on the scroll percentage
+
         
         const color1 = [25, 63, 64];
         const color2 = [194, 213, 185];
+        const buttonColor = [69, 124, 101]
 
         const r = Math.round((25 - 194) * scrollPercentage + 194);
         const g = Math.round((63 - 213) * scrollPercentage + 213);
         const b = Math.round((64 - 185) * scrollPercentage + 185);
         navBar.style.backgroundColor = lerpColor(color1, color2, scrollPercentage);
-        if(navButton)navButton.style.backgroundColor = lerpColor(color2, color1, scrollPercentage);
+        if(navButton)navButton.style.backgroundColor = lerpColor(buttonColor, color2, scrollPercentage);
         navBarButtons.forEach((navLink)=>{
             const r = Math.round((25 - 194) * scrollPercentage + 194);
             const g = Math.round((63 - 213) * scrollPercentage + 213);

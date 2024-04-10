@@ -4,29 +4,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "017i8UscqUysCUzsQ",
+          });
+      })();
+    </script>
     <title>Ferienwohnung Lippmann</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light nav-background">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler fewo-nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand fewo-nav-links" href="#">FeWo Seiffen</a>
+        <a class="navbar-brand fewo-nav-links" href="#">FeWo Lippmann</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link fewo-nav-links" href="#seiffen">Seiffen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fewo-nav-links" href="#activities">Aktivitäten</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link fewo-nav-links" href="#fewo">Ferienwohnung</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link fewo-nav-links" href="#approach">Anfahrt</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link fewo-nav-links" href="#price">Preise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fewo-nav-links" href="#seiffen">Seiffen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fewo-nav-links" href="#history">Geschichte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fewo-nav-links" href="#activities">Aktivitäten</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fewo-nav-links" href="#request">Buchungsanfrage</a>
@@ -36,7 +53,6 @@
       </div>
     </nav>
     <div class="svg-container" id="heading">
-      <!--- TODO Path --->
       <img src="img/logo.png" id="logo" >
     </div>
     <section class="parallax">
@@ -53,12 +69,10 @@
       <div class="path-lift"></div>
       <div id="lift-image" class="lift-image">
         <img src="img/lift_bg.png" id="bg">
-        <!--<img id="charNm" class="char" src="img/char_not_moving.png">-->
         <img id="char" class="char" src="img/char3.png">
-        <img src="img/lift.png" alt="">
+        <img id="lift-image" src="img/lift.png" alt="">
       </div>
     </div>
-    <!-- Modal -->
     <div class="modal fade" id="ImageModal" tabindex="-1" aria-labelledby="ImageModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered fewo-modal">
         <div class="modal-content fewo-modal-content">
@@ -328,6 +342,144 @@
               </div>
             </div>
           <p class="pt-3">Wir stehen Ihnen jederzeit gerne zur Verfügung, um Ihren Aufenthalt so angenehm wie möglich zu gestalten. Zögern Sie nicht, uns bei Fragen oder Wünschen zu kontaktieren. Ihre Zufriedenheit liegt uns am Herzen.</p>
+        </div>
+      </div>
+      <!--- approach --->
+      <div id="approach" class="container">
+        <div class="path-container">
+          <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 300 150">
+          <path class="hidden" name="path" d="M 109.00,71.00
+          C 112.33,69.05 115.07,67.25 117.30,63.99
+            119.54,60.71 120.35,55.84 121.42,52.00
+            123.96,42.88 128.30,26.66 135.18,20.23
+            140.26,15.48 148.95,15.04 149.90,25.00
+            150.66,33.08 146.74,42.47 142.23,49.00
+            133.69,61.34 129.10,59.64 126.00,75.00
+            129.00,73.19 132.38,71.29 134.87,68.82
+            140.86,62.88 141.67,53.99 157.00,49.41
+            160.03,48.28 168.74,46.78 170.98,49.41
+            171.96,50.83 171.88,52.53 172.00,54.19
+            169.45,54.00 165.38,53.87 163.00,54.19
+            155.08,56.11 148.49,63.20 147.00,71.00
+            159.33,67.34 154.00,51.60 170.00,56.00
+            170.00,56.00 164.00,71.00 164.00,71.00
+            167.39,69.19 170.89,66.91 173.16,63.71
+            173.16,63.71 183.05,37.00 183.05,37.00
+            188.44,22.55 187.73,20.11 200.00,20.00
+            199.54,29.38 190.49,45.00 187.00,55.00
+            187.00,55.00 194.00,51.36 194.00,51.36
+            195.42,50.77 196.47,50.43 198.00,50.21
+            214.37,47.82 198.51,65.87 196.00,71.00
+            201.58,68.59 208.16,61.74 208.81,55.42
+            209.16,52.83 207.53,50.39 208.81,47.00
+            209.82,44.06 213.38,40.43 216.81,41.66
+            220.05,42.81 218.20,46.17 219.80,48.61
+            221.61,51.37 226.58,52.14 227.87,54.49
+            229.26,57.01 224.18,67.95 223.00,71.00
+            231.27,67.05 232.42,57.91 235.42,50.00
+            236.43,47.34 238.83,43.06 237.19,40.38
+            234.76,36.38 219.34,30.18 217.22,26.61
+            216.28,24.42 216.85,20.47 217.22,18.00
+            225.86,19.00 235.36,28.22 243.00,33.00
+            245.21,24.54 248.30,25.01 256.00,25.00
+            255.62,31.88 253.65,33.85 251.00,40.00
+            251.00,40.00 260.00,45.00 260.00,45.00
+            257.25,52.42 253.05,49.24 248.00,46.00
+            248.00,46.00 239.00,72.00 239.00,72.00
+            239.00,72.00 251.00,64.00 251.00,64.00
+            250.60,70.88 246.48,76.37 240.00,78.99
+            235.46,80.83 230.98,80.92 229.00,76.00
+            227.30,77.20 225.98,78.23 224.00,79.00
+            222.64,79.54 221.45,79.77 220.00,79.89
+            207.51,80.94 214.94,64.18 217.00,58.00
+            217.00,58.00 214.00,57.00 214.00,57.00
+            212.50,64.35 204.66,74.94 198.00,78.43
+            188.37,83.47 183.55,77.30 187.53,68.00
+            187.53,68.00 192.00,60.00 192.00,60.00
+            189.14,62.87 186.16,65.69 183.79,69.00
+            178.99,75.69 180.39,79.67 171.00,80.00
+            171.00,80.00 171.00,75.00 171.00,75.00
+            166.42,78.49 158.30,83.43 154.00,77.00
+            148.53,79.75 141.77,82.68 138.00,76.00
+            138.00,76.00 123.00,83.00 123.00,83.00
+            123.00,83.00 121.39,93.00 121.39,93.00
+            121.45,96.05 127.58,111.28 115.00,116.11
+            112.17,117.20 108.04,117.00 105.00,117.00
+            105.00,117.00 109.75,95.00 109.75,95.00
+            109.75,95.00 109.75,82.18 109.75,82.18
+            109.75,82.18 115.00,76.00 115.00,76.00
+            113.38,77.04 111.78,78.17 110.00,78.92
+            108.57,79.52 107.54,79.75 106.00,79.89
+            92.45,81.12 102.15,65.10 105.00,60.00
+            101.95,63.05 98.31,66.41 95.96,70.00
+            94.37,72.44 92.75,76.69 90.61,78.40
+            89.37,79.40 87.74,79.95 86.15,79.63
+            81.68,78.74 84.24,71.87 85.00,69.00
+            85.00,69.00 75.51,73.51 75.51,73.51
+            75.51,73.51 69.87,80.40 69.87,80.40
+            69.87,80.40 58.00,81.00 58.00,81.00
+            58.00,81.00 60.00,73.01 60.00,73.01
+            60.00,73.01 46.00,73.01 46.00,73.01
+            42.99,73.94 34.48,81.27 31.00,83.65
+            18.84,92.00 16.34,93.00 2.00,93.00
+            2.00,93.00 3.00,83.00 3.00,83.00
+            6.28,83.43 9.72,84.28 13.00,83.61
+            22.62,81.64 32.00,71.61 40.00,68.00
+            38.14,65.71 36.55,63.90 35.65,61.00
+            32.23,50.03 41.59,41.30 52.00,41.02
+            52.00,41.02 67.00,42.16 67.00,42.16
+            71.62,40.16 78.14,31.69 82.01,28.17
+            84.42,25.99 92.31,19.97 94.77,25.31
+            96.01,28.02 92.10,33.52 90.78,36.00
+            85.07,46.76 81.13,53.16 77.00,65.00
+            80.72,64.12 84.77,63.04 87.16,59.79
+            89.33,56.84 89.43,52.16 92.42,50.17
+            94.66,48.69 99.31,49.00 102.00,49.00
+            102.00,49.00 102.00,54.00 102.00,54.00
+            102.00,54.00 108.00,50.99 108.00,50.99
+            109.43,50.46 110.48,50.23 112.00,50.11
+            126.60,48.92 112.23,64.40 109.00,71.00 Z
+          M 144.00,25.00
+          C 137.51,30.72 132.92,44.58 131.00,53.00
+            139.28,46.48 143.77,35.37 144.00,25.00 Z
+          M 79.00,40.00
+          C 79.00,40.00 78.00,40.00 78.00,40.00
+            78.00,40.00 79.00,41.00 79.00,41.00
+            79.00,41.00 79.00,40.00 79.00,40.00 Z
+          M 78.00,41.00
+          C 78.00,41.00 77.00,41.00 77.00,41.00
+            77.00,41.00 78.00,42.00 78.00,42.00
+            78.00,42.00 78.00,41.00 78.00,41.00 Z
+          M 77.00,42.00
+          C 72.86,45.00 68.84,47.72 72.00,53.00
+            72.00,53.00 77.00,42.00 77.00,42.00 Z
+          M 59.00,50.00
+          C 55.73,48.49 53.70,47.75 50.00,48.11
+            42.24,48.87 38.49,56.73 46.00,63.00
+            46.00,63.00 59.00,50.00 59.00,50.00 Z
+          M 102.00,54.00
+          C 102.00,54.00 101.00,54.00 101.00,54.00
+            101.00,54.00 102.00,55.00 102.00,55.00
+            102.00,55.00 102.00,54.00 102.00,54.00 Z
+          M 187.00,55.00
+          C 187.00,55.00 186.00,55.00 186.00,55.00
+            186.00,55.00 187.00,56.00 187.00,56.00
+            187.00,56.00 187.00,55.00 187.00,55.00 Z
+          M 62.00,57.00
+          C 57.42,60.07 54.46,61.92 52.00,67.00
+            52.00,67.00 62.00,68.00 62.00,68.00
+            62.00,68.00 62.00,57.00 62.00,57.00 Z"></path>
+          </svg>
+        </div>
+        <div class="path-spacer path-spacer-large"></div>
+        <div class="texture-card">
+          <div class="speach hidden"></div>
+          <div >
+            <p>Unsere Ferienwohnung liegt nur wenige Gehminuten vom Ortszentrum entfernt. Parkplätze sind vorhanden. Wir freuen uns auf Ihren Besuch!</p>
+            <div id="map" style="height: 400px;"></div>
+            <p class="pt-4">Ferienwohnung in <a class="fewo-link" target="_blank" href="https://www.google.com/maps/place/Ferienwohnung+und+Dachdeckerei+Heiko+Lippmann/@50.6498108,13.4494005,19.42z/data=!4m6!3m5!1s0x4709f9ffa82c7f5b:0x7307afc1b4a99ebf!8m2!3d50.6497719!4d13.4494301!16s%2Fg%2F1tgfvbd9?entry=ttu">Google Maps</a> öffenen.</p>
+          </div>
         </div>
       </div>
       <!--- Prices --->
@@ -923,7 +1075,6 @@
         </div>
       </div>
       <!--- Request --->
-      <!--- maybe formspree ? --->
       <div id="request" class="container">
         <div class="path-container">
           <svg xmlns="http://www.w3.org/2000/svg"
@@ -1052,72 +1203,55 @@
           M 75.51,61.44"></path>
           </svg>
         </div>
-        <!-- 
-
-<form id="contactForm">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name"><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br>
-    <label for="subject">Subject:</label><br>
-    <input type="text" id="subject" name="subject"><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message"></textarea><br><br>
-    <button type="button" id="submit">Submit</button>
-</form>
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("submit").addEventListener("click", function() {
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var subject = document.getElementById("subject").value;
-        var message = document.getElementById("message").value;
-        
-        // Send email using EmailJS
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        }).then(function(response) {
-            alert("Email sent successfully!");
-            // Optionally, you can clear the form fields after sending the email
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("subject").value = "";
-            document.getElementById("message").value = "";
-        }, function(error) {
-            alert("Failed to send email! Error: " + error);
-        });
-    });
-});
-</script>
-
-        -->
         <div class="path-spacer path-spacer-large"></div>
         <div class="texture-card fewo-request">
-          <div class="mb-3">
-            <label for="mail" class="form-label">Ihre Email:</label>
-            <input type="email" class="form-control" id="mail" placeholder="name@beispiel.de">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Ihre Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="name@beispiel.de">
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Betreff:</label>
+              <input type="text" class="form-control" id="subject" value="Anfrage Ferienwohnung">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Anfrage:</label>
+              <textarea class="form-control" id="message" rows="5"></textarea>
+            </div>
+            <button type="button" id="submit" class="fewo-request-send">Absenden</button>
+          </form>
+        </div>
+      </div>
+      <div class="alert-container">
+        <div id="alert-success" class="toast fewo-toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">E-Mail</strong>
+            <small>jetzt</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" class="form-control" id="name" >
+          <div class="toast-body">
+            Ihr Anfrage wurde erfolgreich übermittelt!
           </div>
-          <div class="mb-3">
-            <label for="subject" class="form-label">Betreff:</label>
-            <input type="text" class="form-control" id="subject" value="Anfrage Ferienwohnung">
+        </div>
+        <div id="alert-error" class="toast fewo-toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">E-Mail</strong>
+            <small>jetzt</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>
-          <div class="mb-3">
-            <label for="request-text" class="form-label">Anfrage:</label>
-            <textarea class="form-control" id="request-text" rows="5"></textarea>
+          <div class="toast-body">
+            Es ist ein Fehler aufgetreten, versuchen Sie es später erneut!
           </div>
-          <button class="fewo-request-send">Absenden</button>
         </div>
       </div>
     </div>
+    <script src="map.js" defer></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
