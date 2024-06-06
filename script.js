@@ -71,19 +71,19 @@ const initMailConnection = () => {
     }
 
     document.getElementById("submit").addEventListener("click", ()=>{
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
         emailjs.send("service_cr6ggjr","template_0kmmqzp",{
-            c_name: name,
-            c_message: email,
-            c_email: message,
+            c_name: name.value,
+            c_email: email.value,
+            c_message: message.value,
         },"017i8UscqUysCUzsQ").then(function(response) {
             alertContainer.style.visibility = "visible";
             toastSuccess.show()
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
+            name.value = "";
+            email.value = "";
+            message.value = "";
             hideContainer()
         }, function(error) {
             alertContainer.style.visibility = "visible";
