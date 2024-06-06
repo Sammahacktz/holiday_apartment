@@ -55,6 +55,8 @@ const animatPath = (path, duration) => {
     path.setAttribute('stroke-dashoffset', '0');
 }
 const initMailConnection = () => {
+    const alertContainer = document.getElementById("alert-container")
+    alertContainer.style.visibility = "hidden";
 
     const toastS = document.getElementById('alert-success');
     const toastF = document.getElementById('alert-error');
@@ -62,24 +64,31 @@ const initMailConnection = () => {
     const toastSuccess = bootstrap.Toast.getOrCreateInstance(toastS);
     const toastFailed = bootstrap.Toast.getOrCreateInstance(toastF);
 
+    const hideContainer = () => {
+        setTimeout(()=>{
+            alertContainer.style.visibility = "hidden";
+        }, 6000)
+    }
+
     document.getElementById("submit").addEventListener("click", ()=>{
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
-        toastSuccess.show()
-
         emailjs.send("service_cr6ggjr","template_0kmmqzp",{
             c_name: name,
             c_message: email,
             c_email: message,
         },"017i8UscqUysCUzsQ").then(function(response) {
+            alertContainer.style.visibility = "visible";
             toastSuccess.show()
             document.getElementById("name").value = "";
             document.getElementById("email").value = "";
             document.getElementById("message").value = "";
+            hideContainer()
         }, function(error) {
+            alertContainer.style.visibility = "visible";
             toastFailed.show()
-            alert("Failed to send email! Error: " + error);
+            hideContainer()
         });
     });
 }
