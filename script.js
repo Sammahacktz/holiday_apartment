@@ -111,6 +111,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     images.forEach((img)=>{
+        const spinner = img.previousElementSibling;
+
+        img.addEventListener('load', ()=>{
+            spinner.style.display = 'none';
+            img.style.display = 'block';
+        });
+
+        if (img.complete) {
+            img.dispatchEvent(new Event('load'));
+        } else {
+            spinner.style.display = 'block';
+        }
+
         img.addEventListener("click",()=>{
             modalImage.src=img.src
             ImageModalLabel.innerText=img.alt

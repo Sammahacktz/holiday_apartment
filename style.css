@@ -414,7 +414,24 @@ footer a:hover{
     color: #fff;
 }
 
-
+/*_______________________*/
+/*          IMAGES       */
+/*_______________________*/
+.spinner-wrapper {
+    position: relative;
+    display: inline-block;
+    min-height: 380px;
+}
+.spinner-wrapper .spinner-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; 
+}
+.spinner-wrapper img {
+    display: none;
+}
 /*_______________________*/
 /*       ANIMANTIONS     */
 /*_______________________*/
@@ -469,5 +486,11 @@ footer a:hover{
         max-height: 200px;
         max-width: 300px;
         z-index: 5;
+    }
+
+    .spinner-wrapper {
+        position: relative;
+        display: inline-block;
+        min-height: 210px;
     }
 }
